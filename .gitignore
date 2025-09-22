@@ -1,0 +1,4 @@
+dependencies/*
+*.swp
+out
+cache
