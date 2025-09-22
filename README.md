@@ -1,18 +1,24 @@
 # ONLYswaps hacker house workshop
 
-In this workshop, you're going to build a simple smart contract that will move an ERC20 token, RUSD, from Base Sepolia to AVAX fuji.
-It will use the ONLYswaps protocol, built on top of the [dcipher network](https://x.com/dciphernetwork) to execute, fulfil and verify the swap.
+In this workshop, you're going to build a simple smart contract that will move an ERC20 token, RUSD, from Base Sepolia to AVAX fuji.  
+It will use the [ONLYswaps protocol](https://onlyswaps.dcipher.network), built on top of the [dcipher network](https://x.com/dciphernetwork) to execute, fulfil and verify the swap.
 
 ## Setup
 First, you will need to install the following packages:
 - [foundry](https://getfoundry.sh/)
 
 ## Build the project
-1. Install the dependencies by running:  
-   `forge soldeer install --recursive-deps`
+1. Clone the repository by running:
+    `git clone git@github.com:randa-mu/loops-2025-onlyswaps-workshop.git`
 
-2. Ensure the stub project builds by running `forge build`.  
-   You can re-run this any time you make changes to ensure they work.
+2. Enter the directory by running:
+    `cd loops-2025-onlyswaps-workshop`
+
+3. Install the dependencies by running:  
+    `forge soldeer install --recursive-deps`
+
+4. Ensure the stub project builds by running `forge build`.  
+    You can re-run this any time you make changes to ensure they work.
 
 ## Preparing your wallet
 1. **(Optional but recommended) Create a new wallet**
@@ -25,7 +31,7 @@ First, you will need to install the following packages:
     Private key: 0x9f72ad68e03668c3f1610b8d6888632e1641183f843ae73287716ed85e048ff5
     ```
 > [!NOTE]  
-> You can also use an existing Base Sepolia private key if you have one
+> You can also use an existing Base Sepolia private key/address if you have them
 
 2. **Prepare your terminal environment**
 

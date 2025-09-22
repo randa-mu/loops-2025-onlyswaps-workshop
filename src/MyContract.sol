@@ -13,9 +13,7 @@ contract MyContract {
         token = ERC20FaucetToken(Helpers.RUSD_ADDRESS);
     }
 
-    function spend() public {
-        token.approve(address(this), 1 ether);
-        onlyswapsRouter.getSwapRequestParameters()
-
+    function execute() public {
+        // you're going to fill in your code here
     }
 }
