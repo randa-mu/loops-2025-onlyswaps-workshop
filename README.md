@@ -24,17 +24,17 @@ First, you will need to install the following packages:
     Address:     0xf4e013c1672C74f80fBec6Eb8e94feD9bF43a868
     Private key: 0x9f72ad68e03668c3f1610b8d6888632e1641183f843ae73287716ed85e048ff5
     ```
-   > [!NOTE]  
-   > You can also use an existing Base Sepolia private key if you have one
+> [!NOTE]  
+> You can also use an existing Base Sepolia private key if you have one
 
 2. **Prepare your terminal environment**
 
    For convenience, we're going to export a bunch of variables to our shell so we don't have to copypasta them every time we want to use them.  
    First, copy the [.env.local](./.env.local) to a new file called simply `.env`. This will make sure you don't accidentally commit your private key and leak it to the world.
 
-   > [!WARNING]  
-   > If you skipped the last sentence and didn't copy .env.local to .env, you really might accidentally commit your private key and get pwned.  
-   > Even smart people make mistakes - don't get lazy!!
+> [!WARNING]  
+> If you skipped the last sentence and didn't copy .env.local to .env, you really might accidentally commit your private key and get pwned.  
+> Even smart people make mistakes - don't get lazy!!
 
    Open the [.env](./.env) you just created and fill in PRIVATE_KEY and MY_ADDRESS using the values from step 1, e.g.  
    `PRIVATE_KEY=0x9f72ad68e03668c3f1610b8d6888632e1641183f843ae73287716ed85e048ff5`.
@@ -42,8 +42,8 @@ First, you will need to install the following packages:
    We can then load the env vars in our environment by running `source .env.local`.  
    If you're on an exotic shell you might need to do something else - you chose this path!!
 
-   > [!NOTE]  
-   > You're going to re-use this information a few times, so if you open additional terminals you'll need to re-export it.
+> [!NOTE]  
+> You're going to re-use this information a few times, so if you open additional terminals you'll need to re-export it.
 
 3. **Get some test ETH for Base Sepolia.**
 
