@@ -93,7 +93,7 @@ Okay great, you've completed all the setup! Next, we're going to make a really s
 
 5. **Check the solver balance on the source chain**
 
-   Currently Randamu is running the only solver, and its address is `0xeBF1B841eFF6D50d87d4022372Bc1191E781aB68`, so you can run:  
+   Currently Randamu is running the only solver, and its address is `0xeBF1B841eFF6D50d87d4022372Bc1191E781aB68`, so you can run:   
    `cast call $RUSD_ADDRESS "balanceOf(address)" 0xeBF1B841eFF6D50d87d4022372Bc1191E781aB68 --rpc-url $BASE_RPC_URL`
 
 ## Reminders to maintainer when versions update
