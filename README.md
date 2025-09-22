@@ -148,10 +148,11 @@ Transaction hash: 0xb70982ff967374ae63218c1c8cd066b550dde3a9abff8d2a8594295d47e0
    This command should output a big hex value. If it outputs just `0x`, then you've made a mistake somewhere.
 
 2. **Call your contract code**  
-You can do this with the power of `cast` again. Run:  
-`cast send --rpc-url $BASE_RPC_URL --private-key $PRIVATE_KEY  $CONTRACT_ADDRESS "executeSwap()"`
 
-If you've changed the function signature, you will need to change `"executeSwap()"` to map your new parameters.  
+   You can do this with the power of `cast` again. Run:  
+   `cast send --rpc-url $BASE_RPC_URL --private-key $PRIVATE_KEY  $CONTRACT_ADDRESS "executeSwap()"`
+
+   If you've changed the function signature, you will need to change `"executeSwap()"` to map your new parameters.  
 
 3. **Check the contract's balance on the destination chain**  
 
@@ -183,7 +184,8 @@ If this was all too easy, you could try some of the following:
 
 - Set the `recipientAddress` to a contract on the destination chain  
 
-   If you implement the `fallback` function, you might be able to implement spicy logic on token transfers. 
+   If you implement the `fallback` function, you might be able to implement spicy logic on token transfers.  
+   Honestly, I haven't even tried this so who knows what demons lurk in this! Let the Randamu team know if you do anything spicy with this.
 
 - Run your own solver  
 
