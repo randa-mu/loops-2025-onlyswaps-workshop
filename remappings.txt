@@ -1,4 +1,2 @@
-bls-solidity-0.3.0/=dependencies/bls-solidity-0.3.0/
 forge-std-1.10.0/=dependencies/forge-std-1.10.0/
 onlyswaps-solidity-v0.1.0/=dependencies/onlyswaps-solidity-v0.1.0/
-onlyswaps-solidity-v0.1/=dependencies/onlyswaps-solidity-v0.1/

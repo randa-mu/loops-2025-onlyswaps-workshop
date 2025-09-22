@@ -8,5 +8,5 @@ First, you will need to install the following packages:
 - install the dependencies by running `forge soldeer install`
 
 ## Reminders to maintainer when versions update
-- update the dependency revision in the [foundry.tom](./foundry.toml)
+- update the dependency revision in the [foundry.toml](./foundry.toml)
 - add new address for RUSD and Router for each chain in [the helpers](./src/Helpers.sol)
