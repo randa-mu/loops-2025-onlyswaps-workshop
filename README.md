@@ -106,15 +106,15 @@ Okay great, you've completed all the setup! Next, we're going to make a really s
 > Every router on every chain has both `getSwapRequestParameters` and `getSwapRequestReceipt`, because in some swaps they're the destination chain, and in some swaps they're the source chain.  
 > This can be confusing, so make sure you're making the right call on the right chain or you could get the wrong status!
 
-## Deploying and using our new contract
+## Deploying and using your new contract
 
-1. **Deploy the contracts to Base**
+1. **Deploy the contracts to Base**  
 
    First, let's build the project again by running `forge build`.  
    If we see the `Compiler run successful!` message, we're good to deploy.
 
    We can deploy the contract by running:
-   `forge create src/MyContract.sol:MyContract --private-key $PRIVATE_KEY --rpc-url $BASE_RPC_URL --broadcast --constructor-args $MY_ADDRESS`
+   `forge create src/MyContract.sol:MyContract --rpc-url $BASE_RPC_URL --private-key $PRIVATE_KEY --broadcast --constructor-args $MY_ADDRESS`
 
 > ![WARNING]
 > You **must** put --constructor-args as the last argument, or `forge` will ignore all the other args.
@@ -141,28 +141,49 @@ Transaction hash: 0xb70982ff967374ae63218c1c8cd066b550dde3a9abff8d2a8594295d47e0
 
    This command should output a big hex value. If it outputs just `0x`, then you've made a mistake somewhere.
 
-2. **Call your contract code** 
+2. **Call your contract code**  
 You can do this with the power of `cast` again. Run:
-`cast send $CONTRACT_ADDRESS "executeSwap()" --rpc-url $BASE_RPC_URL --private-key $PRIVATE_KEY`.
+`cast send --rpc-url $BASE_RPC_URL --private-key $PRIVATE_KEY  $CONTRACT_ADDRESS "executeSwap()"`
 
 If you've changed the function signature, you will need to change `"executeSwap()" to map your new parmeters`.  
 
-2. **Check your balance on the destination chain**
+3. **Check the contract's balance on the destination chain**  
 
-   `cast call $RUSD_ADDRESS "balanceOf(address)" $MY_ADDRESS --rpc-url $AVAX_RPC_URL`
+   `cast call $RUSD_ADDRESS "balanceOf(address)" $CONTRACT_ADDRESS --rpc-url $AVAX_RPC_URL`
 
    The output will be hex, so you can add a `| cast to-dec` if you'd like to see the decimal value.
 
-5. **Check the solver balance on the source chain**
+4. **Check the solver balance on the source chain**  
 
-   Currently Randamu is running the only solver, and its address is `0xeBF1B841eFF6D50d87d4022372Bc1191E781aB68`, so you can run:   
+   Currently Randamu is running the only solver, and its address is `0xeBF1B841eFF6D50d87d4022372Bc1191E781aB68`, so you can run:
    `cast call $RUSD_ADDRESS "balanceOf(address)" 0xeBF1B841eFF6D50d87d4022372Bc1191E781aB68 --rpc-url $BASE_RPC_URL`
 
+   You can also check [basescan](https://sepolia.basescan.org) and see some of the transactions from other participants! 
+
+5. **Try your contract's status code**  
+
+   If you implemented `hasFinishedExecuting` correctly, you should also be able to see when a swap has been executed. Use the following cast call to check your most recent swap:
+   `cast call $CONTRACT_ADDRESS "hasFinishedExecuting()" --rpc-url $BASE_RPC_URL`  
+   If you did it correctly, you should see `0x0000000000000000000000000000000000000000000000000000000000000001`.
+
+## Spicier Extensions
+
+If this was all too easy, you could try some of the following:
+
+- Manage multiple request IDs in your contract  
+
+We discussed request IDs in brief earlier, but it's worth trying out managing and using them for yourself. You may need to import extra structs to use them effectively.
+
+- Set the `recipientAddress` to a contract on the destination chain  
+
+If you implement the `fallback` function, you might be able to implement spicy logic on token transfers. 
+
+- Run your own solver  
+
+Anyone can run a solver; Try spinning one up using the docker container or binary in the [solver repo](https://github.com/randa-mu/onlyswaps-solver). See if you can steal some of the swaps from the Randamu solver ;)
 
 ## Final Thoughts
-1. For frontend applications, you probably want to use [the javascript client](https://github.com/randa-mu/onlyswaps-js) instead. Its functionality is analogous to much of the functionality here, so your  new knowledge should cross over!
-
-1. 
+For frontend applications, you probably want to use [the javascript client](https://github.com/randa-mu/onlyswaps-js) instead. Its functionality is analogous to much of the functionality here, so your  new knowledge should cross over!
 
 ## Reminders to maintainer when versions update
 - update the dependency revision in the [foundry.toml](./foundry.toml)
