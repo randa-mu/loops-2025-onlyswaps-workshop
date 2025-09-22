@@ -6,14 +6,24 @@ import {ERC20FaucetToken} from "../dependencies/onlyswaps-solidity-v0.1.0/src/mo
 
 contract MyContract {
     IRouter internal onlyswapsRouter;
-    ERC20FaucetToken internal token;
+    address internal owner;
 
-    constructor() {
-        onlyswapsRouter = IRouter(Helpers.RUSD_ADDRESS);
-        token = ERC20FaucetToken(Helpers.RUSD_ADDRESS);
+    constructor(address _owner) {
+        owner = _owner;
+        onlyswapsRouter = IRouter(Helpers.ROUTER_ADDRESS);
+        ERC20FaucetToken(Helpers.RUSD_ADDRESS).mint();
     }
 
-    function execute() public {
-        // you're going to fill in your code here
+    function executeSwap() public {
+        require(msg.sender == owner, "only the owner can call execute!");
+
+        // 1. you're going to fill in your code to execute a swap here
+
+    }
+
+    function hasFinishedExecuting() public view returns (bool) {
+        // 2. you're going to fill in your code to check if it has been verified here
+
+        return false;
     }
 }
