@@ -45,12 +45,13 @@ First, you will need to install the following packages:
 > If you skipped the last sentence and didn't copy .env.local to .env, you really might accidentally commit your private key and get pwned.  
 > Even smart people make mistakes - don't get lazy!!
 
-    Open the [.env](./.env) you just created and fill in PRIVATE_KEY and MY_ADDRESS using the values from step 1, e.g.  
-   `PRIVATE_KEY=0x9f72ad68e03668c3f1610b8d6888632e1641183f843ae73287716ed85e048ff5`.
+   Open the [.env](./.env) you just created and fill in PRIVATE_KEY and MY_ADDRESS using the values from step 1, e.g.  
+   PRIVATE_KEY=0x9f72ad68e03668c3f1610b8d6888632e1641183f843ae73287716ed85e048ff5`.
 
-    We can then load the env vars in our environment by running:
-    `source .env.local`.  
-    If you're on an exotic shell you might need to do something else - you chose this path!!
+   We can then load the env vars in our environment by running:  
+   `source .env.local`.  
+
+   If you're on an exotic shell you might need to do something else - you chose this path!!
 
 > [!NOTE]  
 > You're going to re-use this information a few times, so if you open additional terminals you'll need to re-export it.
@@ -103,7 +104,7 @@ Next, we're going to make a really simple smart contract that requests a swap of
    On the destination chain, `getSwapRequestReceipt` contains details on the fufillment and check the `fulfilled` flag.  
    If it's true, the swap has been fulfilled by a solver. You can't tell whether the funds have been released to the solver on the source chain, because the destination chain doesn't know about the state of the source chain directly!.
 
-   Use these calls to try and implement `hasFinishedExecuting` on the source chain, marked by the comment `2.`.
+   Use these calls to try and implement `hasFinishedExecuting` on the source chain, marked by the comment `2.`.  
    Use `cast` to check the status on the destination chain
 
 > [!NOTE]
@@ -138,8 +139,9 @@ Transaction hash: 0xb70982ff967374ae63218c1c8cd066b550dde3a9abff8d2a8594295d47e0
 >`Error: server returned an error response: error code -32000: insufficient funds for gas * price + value: balance 0, tx cost 124444016751, overshot 124444016751`
 > it means your wallet isn't funded! Go back to [step 3 of preparing your wallet](#preparing-your-wallet))
 
-   Take the value from the `Deployed to: ` line, and export like like so:  
-   `export CONTRACT_ADDRESS=0xD861E981dC0a2F46B2CD0Cc15A3b0A4e90101d82`  
+   Take the value from the `Deployed to: ` line, and export like so:  
+   `export CONTRACT_ADDRESS=0xD861E981dC0a2F46B2CD0Cc15A3b0A4e90101d82` 
+
    Then check for its existence on-chain by running:  
    `cast code $CONTRACT_ADDRESS --rpc-url $BASE_RPC_URL`
 
@@ -149,7 +151,7 @@ Transaction hash: 0xb70982ff967374ae63218c1c8cd066b550dde3a9abff8d2a8594295d47e0
 You can do this with the power of `cast` again. Run:  
 `cast send --rpc-url $BASE_RPC_URL --private-key $PRIVATE_KEY  $CONTRACT_ADDRESS "executeSwap()"`
 
-If you've changed the function signature, you will need to change `"executeSwap()"`` to map your new parameters`.  
+If you've changed the function signature, you will need to change `"executeSwap()"` to map your new parameters.  
 
 3. **Check the contract's balance on the destination chain**  
 
