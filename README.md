@@ -49,7 +49,7 @@ First, you will need to install the following packages:
    PRIVATE_KEY=0x9f72ad68e03668c3f1610b8d6888632e1641183f843ae73287716ed85e048ff5`.
 
    We can then load the env vars in our environment by running:  
-   `source .env.local`.  
+   `source .env`.  
 
    If you're on an exotic shell you might need to do something else - you chose this path!!
 
@@ -84,12 +84,12 @@ Next, we're going to make a really simple smart contract that requests a swap of
 3. **Implement `executeSwap`**  
 
    Navigate to the comment labelled `1.`  
-   Here you should call `rrequestCrossChainSwap` on the onlyswaps router to actually create an order for the amount required.  
+   Here you should call [`requestCrossChainSwap`](https://github.com/randa-mu/onlyswaps-solidity/blob/cf80cf7a1944954d2bb65fd33effad49207c9c09/src/interfaces/IRouter.sol#L105-L120) on the onlyswaps router to actually create an order for the amount required.  
    You will need to pass the amount + the fee as a value, or else it will revert!  
 
    This emits returns a `requestId` you can use to track the swap.  
    It also emits an event with the requestId for tracking offchain.  
-   `requestId`s are deterministic based on the swap parameters, so you can pass all the parameters to the `getSwapRequestId` function to figure it out if you lose it.
+   `requestId`s are deterministic based on the swap parameters, so you can pass all the parameters to the [`getSwapRequestId`](https://github.com/randa-mu/onlyswaps-solidity/blob/cf80cf7a1944954d2bb65fd33effad49207c9c09/src/interfaces/IRouter.sol#L163-L166) function to figure it out if you lose it.
 
 4. **Implement `hasFinishedExecuting`**
 
@@ -98,10 +98,10 @@ Next, we're going to make a really simple smart contract that requests a swap of
    For this workshop, Base Sepolia going to be our source chain - it's the source of the original funds.  
    Avalanche Fuji is the destination chain, and it's where the user funds will end up.
 
-   On the source chain, `getSwapRequestParameters` contains all the details related to the swap. Here, we can check the `executed` flag to determine whether a swap has been fulfilled and verified.
+   On the source chain, [`getSwapRequestParameters`](https://github.com/randa-mu/onlyswaps-solidity/blob/cf80cf7a1944954d2bb65fd33effad49207c9c09/src/interfaces/IRouter.sol#L196-L202) contains all the details related to the swap. Here, we can check the `executed` flag to determine whether a swap has been fulfilled and verified.
    If it's true, the swap has been fulfilled and verified successfully!
 
-   On the destination chain, `getSwapRequestReceipt` contains details on the fufillment and check the `fulfilled` flag.  
+   On the destination chain, [`getSwapRequestReceipt`](https://github.com/randa-mu/onlyswaps-solidity/blob/cf80cf7a1944954d2bb65fd33effad49207c9c09/src/interfaces/IRouter.sol#L217-L241) contains details on the fufillment and check the `fulfilled` flag.  
    If it's true, the swap has been fulfilled by a solver. You can't tell whether the funds have been released to the solver on the source chain, because the destination chain doesn't know about the state of the source chain directly!.
 
    Use these calls to try and implement `hasFinishedExecuting` on the source chain, marked by the comment `2.`.  
