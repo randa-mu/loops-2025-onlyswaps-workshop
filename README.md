@@ -84,7 +84,7 @@ Next, we're going to make a really simple smart contract that requests a swap of
 3. **Implement `executeSwap`**  
 
    Navigate to the comment labelled `1.`  
-   Here you should call `requestCrossChainSwap` on the onlyswaps router to actually create an order for the amount required.  
+   Here you should call [`requestCrossChainSwap`](https://github.com/randa-mu/onlyswaps-solidity/blob/cf80cf7a1944954d2bb65fd33effad49207c9c09/src/interfaces/IRouter.sol#L105-L120) on the onlyswaps router to actually create an order for the amount required.  
    You will need to pass the amount + the fee as a value, or else it will revert!  
 
    This emits returns a `requestId` you can use to track the swap.  
