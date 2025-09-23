@@ -60,8 +60,6 @@ First, you will need to install the following packages:
 
    Send your wallet address in the Randamu channel in TG and we'll send you some! You're going to need it to deploy contracts and interact with them.
 
-> [!NOTE]
-> If you see an error such as `Error: Failed to estimate gas: server returned an error response: error code -32000: gas required exceeds allowance (0)`, you didn't complete step 3 correctly - this means you have no test ETH.
 
 ## Integrating ONLYswaps
 Okay great, you've completed all the setup!  
