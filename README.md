@@ -190,6 +190,10 @@ If this was all too easy, you could try some of the following:
    Anyone can run a solver; Try spinning one up using the docker container or binary in the [solver repo](https://github.com/randa-mu/onlyswaps-solver). 
    See if you can steal some of the swaps from the Randamu solver ;)
 
+## Answers
+If you get really stuck, there is an answers branch you can check for one possible solution - run:  
+`git checkout answers`.
+
 ## Final Thoughts
 For frontend applications, you probably want to use [the javascript client](https://github.com/randa-mu/onlyswaps-js) instead. Its functionality is analogous to much of the functionality here, so your  new knowledge should cross over!
 
