@@ -84,7 +84,7 @@ Next, we're going to make a really simple smart contract that requests a swap of
 3. **Implement `executeSwap`**  
 
    Navigate to the comment labelled `1.`  
-   Here you should call `rrequestCrossChainSwap` on the onlyswaps router to actually create an order for the amount required.  
+   Here you should call `requestCrossChainSwap` on the onlyswaps router to actually create an order for the amount required.  
    You will need to pass the amount + the fee as a value, or else it will revert!  
 
    This emits returns a `requestId` you can use to track the swap.  
