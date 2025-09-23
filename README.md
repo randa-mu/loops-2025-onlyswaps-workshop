@@ -49,7 +49,7 @@ First, you will need to install the following packages:
    PRIVATE_KEY=0x9f72ad68e03668c3f1610b8d6888632e1641183f843ae73287716ed85e048ff5`.
 
    We can then load the env vars in our environment by running:  
-   `source .env.local`.  
+   `source .env`.  
 
    If you're on an exotic shell you might need to do something else - you chose this path!!
 
