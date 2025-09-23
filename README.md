@@ -46,7 +46,7 @@ First, you will need to install the following packages:
 > Even smart people make mistakes - don't get lazy!!
 
    Open the [.env](./.env) you just created and fill in PRIVATE_KEY and MY_ADDRESS using the values from step 1, e.g.  
-   PRIVATE_KEY=0x9f72ad68e03668c3f1610b8d6888632e1641183f843ae73287716ed85e048ff5`.
+   `PRIVATE_KEY=0x9f72ad68e03668c3f1610b8d6888632e1641183f843ae73287716ed85e048ff5`.
 
    We can then load the env vars in our environment by running:  
    `source .env`.  
