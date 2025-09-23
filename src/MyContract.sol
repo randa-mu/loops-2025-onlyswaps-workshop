@@ -6,6 +6,7 @@ import {ERC20FaucetToken} from "../dependencies/onlyswaps-solidity-v0.1.0/src/mo
 
 contract MyContract {
     IRouter internal onlyswapsRouter;
+    ERC20FaucetToken internal token;
     address internal owner;
 
     // we need to pass the owner as a constructor arg, because by default forge uses deployer contracts
@@ -15,7 +16,8 @@ contract MyContract {
         onlyswapsRouter = IRouter(Helpers.ROUTER_ADDRESS);
 
         // we mint some of our RUSD tokens so the contract has a balance to trade
-        ERC20FaucetToken(Helpers.RUSD_ADDRESS).mint();
+        token = ERC20FaucetToken(Helpers.RUSD_ADDRESS);
+        token.mint();
     }
 
     function executeSwap() public {
