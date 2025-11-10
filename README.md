@@ -75,7 +75,7 @@ Next, we're going to make a really simple smart contract that requests a swap of
 
    As a security feature, ERC20s mandate that you approve funds movements between addresses so sneaky contracts can't unilaterally move your funds.  
    Typically, you'd want to do this in the frontend of an application. Users would be prompted by their wallet to sign an approval transaction before their RUSD funds are moved.  
-   For UX purposes, you might approve a large amount to avoid needing repeated approvals and/or use [EIP-7702](https://eip7702.io/) to make this a single signature for your useres.  
+   For UX purposes, you might approve a large amount to avoid needing repeated approvals and/or use [EIP-7702](https://eip7702.io/) to make this a single signature for your users.  
 
    For simplicity, the contract mints some RUSD tokens in its constructor, so you just need to approve the router contract to move them.
 
