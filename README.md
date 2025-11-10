@@ -199,6 +199,8 @@ For frontend applications, you probably want to use [the javascript client](http
 
 ## Reminders to maintainer when versions update
 - update the dependency revision in the [foundry.toml](./foundry.toml)
+- update the remappings.txt with the new dependency revision
+- change any import paths to the new version of onlyswaps-solidity
 - add new address for:
     - RUSD and Router for each chain in [the helpers](./src/Helpers.sol)
     - the [.env.local](./.env.local) file

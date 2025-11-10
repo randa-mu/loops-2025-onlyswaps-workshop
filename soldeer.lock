@@ -7,7 +7,7 @@ integrity = "3fd441e2499c5cf04ef9b4126f52150a50dcef9cac1645ff7a955345e947cd04"
 
 [[dependencies]]
 name = "onlyswaps-solidity"
-version = "v0.1.0"
-url = "https://github.com/randa-mu/onlyswaps-solidity/archive/refs/tags/v0.1.0.zip"
-checksum = "6282f2385dd822db01179074ae26b3175e5fe0f17a7fec458d74ccc04da57416"
-integrity = "5757d154658eec0dfc1ca1d36ce529cca895c20adb20c8cdd6fca3626e2a11c2"
+version = "v0.5.0"
+url = "https://github.com/randa-mu/onlyswaps-solidity/archive/refs/tags/v0.5.0.zip"
+checksum = "039938af9c294af155397486f34dcd7c3c7c62d663eeb09a9a62d01724c58441"
+integrity = "31b0b5f6559e848e4d59ab45f115b44297f3b9d61479f1042bfa305c1ae98607"
