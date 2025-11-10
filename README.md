@@ -1,7 +1,7 @@
-# ONLYswaps hacker house workshop
+# only swaps hacker house workshop
 
 In this workshop, you're going to build a simple smart contract that will move an ERC20 token, RUSD, from Base Sepolia to AVAX fuji.  
-It will use the [ONLYswaps protocol](https://onlyswaps.dcipher.network), built on top of the [dcipher network](https://x.com/dciphernetwork) to execute, fulfil and verify the swap.
+It will use the [only swaps protocol](https://dcipher.network/only-swaps), built on top of the [dcipher network](https://x.com/dciphernetwork) to execute, fulfil and verify the swap.
 
 ## Setup
 First, you will need to install the following packages:
@@ -61,7 +61,7 @@ First, you will need to install the following packages:
    Send your wallet address in the Randamu channel in TG and we'll send you some! You're going to need it to deploy contracts and interact with them.
 
 
-## Integrating ONLYswaps
+## Integrating only swaps
 Okay great, you've completed all the setup!  
 Next, we're going to make a really simple smart contract that requests a swap of the tokens we got from the faucet.
 
